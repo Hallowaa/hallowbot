@@ -20,7 +20,7 @@ public class CommandRequestDeserializer extends StdDeserializer<ImmutableApplica
 
     @Override
     public ImmutableApplicationCommandRequest deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
-            throws IOException, JsonProcessingException {
+            throws IOException {
 
         JsonNode node = jsonParser.getCodec().readTree(jsonParser);
 
@@ -41,7 +41,8 @@ public class CommandRequestDeserializer extends StdDeserializer<ImmutableApplica
                     .name(optionName)
                     .description(optionDescription)
                     .type(type)
-                    .required(required).build();
+                    .required(required)
+                    .build();
 
             optionsData.add(optionData);
         }

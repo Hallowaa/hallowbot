@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Main {
 
-    public static final String TOKEN = System.getenv("BOT_TOKEN");
+    public static final String TOKEN = "NzU1MTE2OTU5MjU0ODM5NDI3.X1-neA.A1utR3hSBs-dpdpq6fjMFYrSdbA";
 
     public static void main(String[] args) {
         init();
@@ -54,9 +54,10 @@ public class Main {
 
     public static void createCommands(GatewayDiscordClient gateway) {
         long applicationId = gateway.getRestClient().getApplicationId().block();
-        CommandCreator creator = new CommandCreator(gateway, applicationId);
+        long guildId = 737427345992056832L;
+        CommandCreator creator = new CommandCreator(gateway, applicationId, guildId);
         try {
-            creator.buildInGlobalFromDirectory("src\\main\\resources\\commands");
+            creator.buildInGuildFromDirectory("src\\main\\resources\\commands");
         } catch (IOException e) {
             e.printStackTrace();
         }
