@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Main {
 
-    public static final String TOKEN = "NzU1MTE2OTU5MjU0ODM5NDI3.X1-neA.A1utR3hSBs-dpdpq6fjMFYrSdbA";
+    public static final String TOKEN = "";
 
     public static void main(String[] args) {
         init();
